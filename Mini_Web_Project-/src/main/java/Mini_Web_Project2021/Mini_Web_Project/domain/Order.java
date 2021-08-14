@@ -28,7 +28,7 @@ public class Order {
     private int total; //총 가격
     private int quantity; // 총 수량
 
-    @ManyToMany(mappedBy = "member_id")//member
+    @ManyToMany(mappedBy = "member_id")
     private List<Member> members = new ArrayList<Member>();
 
     @OneToMany(mappedBy = "item_id")//item
