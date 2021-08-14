@@ -6,6 +6,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ORDER_TABLE")
@@ -15,8 +17,15 @@ public class Order {
     @Id
     @GeneratedValue
     @Column(name = "order_id")
-    private Long id;
 
+    @ManyToMany(mappedBy = "member_id")//member
+    private List<Member> members = new ArrayList<>();
+
+    @OneToMany(mappedBy = "item_id")//item
+    private List<Item> items = new ArrayList<>();
+
+
+    private Long id;
     private String name;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
