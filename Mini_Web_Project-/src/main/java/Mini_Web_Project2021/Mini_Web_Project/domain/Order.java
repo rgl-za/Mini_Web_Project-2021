@@ -18,13 +18,6 @@ public class Order {
     @GeneratedValue
     @Column(name = "order_id")
 
-    @ManyToMany(mappedBy = "member_id")//member
-    private List<Member> members = new ArrayList<>();
-
-    @OneToMany(mappedBy = "item_id")//item
-    private List<Item> items = new ArrayList<>();
-
-
     private Long id;
     private String name;
 
@@ -34,5 +27,11 @@ public class Order {
     private String subject; //상품명
     private int total; //총 가격
     private int quantity; // 총 수량
+
+    @ManyToMany(mappedBy = "member_id")//member
+    private List<Member> members = new ArrayList<Member>();
+
+    @OneToMany(mappedBy = "item_id")//item
+    private List<Item> items = new ArrayList<Item>();
 
 }
