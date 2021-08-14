@@ -1,4 +1,4 @@
-package domain;
+package Mini_Web_Project2021.Mini_Web_Project.domain;
 
 import lombok.Getter;
 import lombok.Setter;
