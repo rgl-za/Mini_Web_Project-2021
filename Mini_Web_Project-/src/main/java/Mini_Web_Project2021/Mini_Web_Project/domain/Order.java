@@ -30,9 +30,9 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name="member_id")
-    private Member member_id;
+    private Member member;
 
-    @OneToMany(mappedBy = "item_id")//item
+    @OneToMany(mappedBy = "orderId")//item
     private List<Item> items = new ArrayList<Item>();
 
 }
